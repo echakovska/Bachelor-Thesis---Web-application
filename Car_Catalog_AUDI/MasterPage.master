@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Description" content="" />
+    <meta name="Keywords" content="" />
+    <link rel="stylesheet" media="screen" href="style.css" />
+    <link href="slider/style1.css" rel="stylesheet" type="text/css" />
+    <!--<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /> custom favicon -->
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form id="form1" runat="server">
+        <div id="daddy">
+	        <div id="header">
+		        <div id="logo">
+                    <asp:HyperLink NavigateUrl="~/Default.aspx" ID="hpdefault" runat="server">
+                        <asp:Image ImageUrl="~/images/logo.gif" ID="logoo" runat="server" alt="logo" width="318" height="85" />
+                    </asp:HyperLink>
+                    <span id="logo-text">
+                    <asp:HyperLink NavigateUrl="~/Default.aspx" ID="hpdefault1" runat="server">AUDI</asp:HyperLink></span>
+                 </div><!-- logo -->
+		        <div id="menu">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Дома"/>
+                            <asp:MenuItem NavigateUrl="~/SiteModeli.aspx" Text="Модели"/>
+                            <asp:MenuItem NavigateUrl="~/Novosti.aspx" Text="Новости"/>
+                            <asp:MenuItem NavigateUrl="~/Servis.aspx" Text="Сервис"/>
+                            <asp:MenuItem NavigateUrl="~/About.aspx" Text="Околу АУДИ"/>
+                        </Items>
+                    </asp:Menu>
+		        </div><!-- menu -->
+		        <div id="ticker">
+                    <asp:Button ID="btnA1" runat="server" Text="A1" Width="40px" onclick="btnA1_Click" />
+                    <asp:Button ID="btnA3" runat="server" Text="A3" Width="40px" onclick="btnA3_Click" />
+                    <asp:Button ID="btnA4" runat="server" Text="A4" Width="40px" onclick="btnA4_Click" />
+                    <asp:Button ID="btnA5" runat="server" Text="A5" Width="40px" onclick="btnA5_Click" />
+                    <asp:Button ID="btnA6" runat="server" Text="A6" Width="40px" onclick="btnA6_Click" />
+                    <asp:Button ID="btnA7" runat="server" Text="A7" Width="40px" onclick="btnA7_Click" />
+                    <asp:Button ID="btnA8" runat="server" Text="A8" Width="40px" onclick="btnA8_Click" />
+                    <asp:Button ID="btnQ3" runat="server" Text="Q3" Width="40px" onclick="btnQ3_Click" />
+                    <asp:Button ID="btnQ5" runat="server" Text="Q5" Width="40px" onclick="btnQ5_Click" />
+                    <asp:Button ID="btnQ7" runat="server" Text="Q7" Width="40px" onclick="btnQ7_Click" />
+                    <asp:Button ID="btnTT" runat="server" Text="TT" Width="40px" onclick="btnTT_Click" />
+                    <asp:Button ID="btnR8" runat="server" Text="R8" Width="40px" onclick="btnR8_Click" />
+		        </div><!-- ticker -->
+		        <div id="headerimage">
+			        <div id="icons">
+                        <asp:HyperLink NavigateUrl="~/Default.aspx" ID="hphome" runat="server">
+                            <asp:Image ImageUrl="~/images/icon_home.gif" ID="home" runat="server" alt="Home" width="13" height="13" /> 
+                        </asp:HyperLink>
+                        <asp:HyperLink NavigateUrl="~/SiteMap.aspx" ID="hpsitemap" runat="server">
+                            <asp:Image ImageUrl="~/images/icon_sitemap.gif" ID="sitemap" runat="server" alt="Sitemap" width="13" height="13" />
+                        </asp:HyperLink>
+                        <asp:HyperLink NavigateUrl="~/Contact.aspx" ID="hpcontact" runat="server">
+                            <asp:Image ImageUrl="~/images/icon_contact.gif" ID="contact" runat="server" alt="Contact" width="13" height="13" />
+                        </asp:HyperLink></div><!-- icons -->
+			        <div id="slogan">&nbsp;</div>
+		        </div>
+		        <!-- headerimage -->
+	        </div>
+	        <!-- header -->
+            <div id="content">
+                <div id="cA">
+			            <div class="Ctopleft"></div>
+			            <h3>Пребарувај</h3>
+			            <div id="search">
+				            <input type="text" class="search" /><input type="submit" class="submit" value="Барај" />
+			            </div><!-- search -->
+			            <p>&nbsp;</p>
+                        <asp:LoginView  ID="HeadLoginView" runat="server" EnableViewState="false">
+                            <AnonymousTemplate>
+                                [ <a href="~/users/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                 Добредојде <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" ForeColor="Blue" /></span>!
+                                    [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/Default.aspx" /> ]
+                            </LoggedInTemplate>
+                        </asp:LoginView><br />
+                    <asp:HyperLink NavigateUrl="~/users/PromeniLozinka.aspx" ID="ChangePassword" runat="server" Visible="false">Промени лозинка</asp:HyperLink><br />
+                    <asp:HyperLink NavigateUrl="~/users/Registracija.aspx" ID="Register" runat="server" Visible="false">Креирај нов корисник</asp:HyperLink><br />
+                    <asp:HyperLink NavigateUrl="~/Promena.aspx" ID="Promena" runat="server" Visible="false">Промена во база</asp:HyperLink>
+		        </div><!-- cA -->
+            </div>
+	        <asp:ContentPlaceHolder id="ContentPlaceHolder" runat="server">
+        
+            </asp:ContentPlaceHolder><!-- content -->
+	        <div id="properspace"></div><!-- properspace -->
+            </div><!-- daddy -->
+                <div id="footer">
+	                <div id="foot">
+		                <div id="foot1"><asp:HyperLink NavigateUrl="~/ZastitaNaPodatoci.aspx" ID="zastita" runat="server">Заштита на податоците</asp:HyperLink> - <asp:HyperLink NavigateUrl="~/Copyright.aspx" ID="HyperLink1" runat="server">Copyright</asp:HyperLink></div><!-- foot1 -->
+		                <div id="foot2">
+			                <span class="valid">Valid 
+                                <asp:HyperLink NavigateUrl="http://validator.w3.org/check?uri=referer" ID="xhtml" runat="server">XHTML</asp:HyperLink>&nbsp;+
+                                <asp:HyperLink NavigateUrl="http://jigsaw.w3.org/css-validator/check/referer" ID="css" runat="server">CSS</asp:HyperLink>
+                             </span>&copy; Copyright 2021. All rights reserved.
+		                </div><!-- foot1 -->
+	                </div><!-- foot -->
+               </div><!-- footer -->
+    </form>
+</body>
+</html>
