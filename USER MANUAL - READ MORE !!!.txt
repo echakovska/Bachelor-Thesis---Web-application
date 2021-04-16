@@ -1,0 +1,18 @@
+1. Poradi rabotenjeto na localhost, potrebna e promena na lokacijata za bazata na podatoci. Vo web.config treba da se promeni connectionStrings-ot, odnosno namesto 
+
+connectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\elenac\Desktop\ElenaChakovska_734_CNS\Car_Catalog_AUDI\App_Data\katalogDB.mdf;Integrated Security=True;User Instance=True"/> 
+
+treba da se smeni lokalnata adresa. 
+
+connectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=C:\{lokalna_pateka}\Car_Catalog_AUDI\App_Data\katalogDB.mdf;Integrated Security=True;User Instance=True"/>
+
+
+
+2.Vo bazata na podatoci vneseno e edno korisnicko ime i lozinka
+
+korisnicko ime: admin
+lozinka: admin
+
+
+
+3.Vo bazata na podatoci se vneseni podatoci samo za nekolku avtomobili, za ostanatite ima samo slika
